@@ -27,6 +27,11 @@ import bg from "../images/bg.jpg";
     max-width: 800px;
   }
 
+  .blur,
+  img {
+    grid-area: 1 / 1;
+  }
+
   .blur {
     background: linear-gradient(
       22deg,
@@ -34,23 +39,18 @@ import bg from "../images/bg.jpg";
       rgba(20, 230, 40, 0.2),
       rgba(20, 30, 240, 0.2)
     );
-    display: flex;
+    place-content: center;
   }
 
   img {
     width: 100%;
   }
 
-  .blur,
-  img {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
   .blur h1 {
     color: var(--white);
-    margin: auto;
     font-size: var(--font-800);
     text-shadow: rgba(0, 0, 0, 0.28) 2px 2px;
+    margin: 0;
+    text-align: center;
   }
 </style>
