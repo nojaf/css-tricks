@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import bg from "../images/bg.jpg";
+---
+
+<Layout>
+  <div class="intro">
+    <h1>Nested CSS grid</h1>
+    <p>
+      Trick from <a
+        href="https://x.com/i/status/1834242925401694490"
+        target="_blank">Wes Bos</a
+      >, overlap elements without `position: relative`
+    </p>
+  </div>
+  <main>
+    <Image src={bg} alt="background" />
+    <div class="blur">
+      <h1>Great title here!</h1>
+    </div>
+  </main>
+</Layout>
+<style>
+  main {
+    display: grid;
+    max-width: 800px;
+  }
+
+  .blur {
+    background: linear-gradient(
+      22deg,
+      rgba(220, 30, 40, 0.2),
+      rgba(20, 230, 40, 0.2),
+      rgba(20, 30, 240, 0.2)
+    );
+    display: flex;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .blur,
+  img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .blur h1 {
+    color: var(--white);
+    margin: auto;
+    font-size: var(--font-800);
+    text-shadow: rgba(0, 0, 0, 0.28) 2px 2px;
+  }
+</style>
