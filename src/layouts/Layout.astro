@@ -1,0 +1,106 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>CSS tricks</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --spacing-50: 4px;
+    --spacing-100: 8px;
+    --spacing-200: 12px;
+    --spacing-300: 16px;
+    --spacing-400: 24px;
+    --spacing-500: 32px;
+    --spacing-600: 48px;
+    --spacing-700: 64px;
+    --spacing-800: 96px;
+    --spacing-900: 128px;
+    --spacing-950: 192px;
+
+    --font-50: 12px;
+    --font-100: 14px;
+    --font-200: 16px;
+    --font-300: 18px;
+    --font-400: 20px;
+    --font-500: 24px;
+    --font-600: 30px;
+    --font-700: 36px;
+    --font-800: 48px;
+    --font-900: 60px;
+    --font-950: 72px;
+
+    --line-height: 1.5;
+    --heading-line-height: 1.25;
+    --radius: 4px;
+
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+      Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --primary-50: #fbfdfe;
+    --primary-100: #f4f8fb;
+    --primary-200: #e9f1f7;
+    --primary-300: #dde9f3;
+    --primary-400: #d2e2ef;
+    --primary-500: #c8dceb;
+    --primary-600: #87b2d4;
+    --primary-700: #488abc;
+    --primary-800: #2e5c7f;
+    --primary-900: #172e40;
+    --primary-950: #0c1822;
+
+    --dark-50: #f6f6f6;
+    --dark-100: #e7e7e7;
+    --dark-200: #d1d1d1;
+    --dark-300: #b0b0b0;
+    --dark-400: #888888;
+    --dark-500: #6d6d6d;
+    --dark-600: #5d5d5d;
+    --dark-700: #4f4f4f;
+    --dark-800: #454545;
+    --dark-900: #333333;
+    --dark-950: #262626;
+
+    --white: white;
+    --danger: #d24d57;
+    --danger-hover: #e18a91;
+    --danger-border: #a82a34;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  body {
+    padding: var(--spacing-800);
+    font-family: var(--font);
+    background-color: #efeff0;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: var(--font);
+  }
+
+  h1 {
+    margin-bottom: var(--spacing-300);
+  }
+
+  .intro {
+    margin-bottom: var(--spacing-800);
+  }
+</style>

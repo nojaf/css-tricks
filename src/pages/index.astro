@@ -1,16 +1,81 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <div class="intro">
+    <h1>Nested CSS grid</h1>
+    <p>
+      Trick from <a
+        href="https://x.com/i/status/1838945784328233221"
+        target="_blank">Wes Bos</a
+      >
+    </p>
+  </div>
+  <form action="#">
+    <div>
+      <label for="">Submission Type</label>
+      <select name="" id="">
+        <option value="1">Potluck Question</option>
+        <option value="2">Guest suggestion</option>
+        <option value="3">Show Feedback</option>
+        <option value="4">Other</option>
+      </select>
+    </div>
+    <div>
+      <div>
+        <label for="">What's up</label>
+        <p class="required"></p>
+      </div>
+      <textarea name="" rows="5" id=""></textarea>
+    </div>
+    <div>
+      <label for="">Name</label>
+      <input type="text" placeholder="Name" />
+    </div>
+    <div>
+      <label for="">Email</label>
+      <input type="email" />
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</Layout>
+<style>
+  form {
+    display: grid;
+    gap: var(--spacing-200);
+    margin: var(--spacing-400);
+    /* use the width of the largest label */
+    grid-template-columns: auto 1fr;
+    max-width: 880px;
+  }
+
+  form > div {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    justify-items: end;
+    align-items: baseline;
+  }
+
+  form input,
+  textarea,
+  select {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-100) var(--spacing-200);
+    border-radius: var(--radius);
+    border: 1px solid var(--primary-600);
+
+    &:focus {
+      outline-color: var(--primary-700);
+    }
+  }
+
+  button {
+    grid-column: 2;
+    align-self: flex-end;
+    padding: var(--spacing-100);
+    justify-self: flex-end;
+  }
+</style>
