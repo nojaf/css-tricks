@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="intro">
+    <h1>Display contents</h1>
+    <p>
+      Trick from <a
+        href="https://x.com/wesbos/status/1839698217459495017"
+        target="_blank">Wes Bos</a
+      >, make the nested elements of a flex-item behave as if they were direct
+      children of the flex container.
+    </p>
+  </div>
+  <main>
+    <nav>
+      <a href="#">
+        <iconify-icon icon="tabler:circle-dot" width="24" height="24"
+        ></iconify-icon>
+      </a>
+      <a href="#">
+        <iconify-icon icon="hugeicons:git-pull-request" width="24" height="24"
+        ></iconify-icon>
+      </a>
+      <a href="#">
+        <iconify-icon icon="bytesize:inbox" width="24" height="24"
+        ></iconify-icon>
+      </a>
+      <div class="actions">
+        <input type="search" name="search" />
+        <label for="search">
+          <iconify-icon icon="weui:search-outlined" width="24" height="24"
+          ></iconify-icon>
+        </label>
+        <a href="#">
+          <iconify-icon icon="icons8:plus" width="24" height="24"
+          ></iconify-icon>
+        </a>
+      </div>
+    </nav>
+  </main>
+</Layout>
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-200);
+    border: 1px solid var(--dark-200);
+    padding: var(--spacing-50) var(--spacing-100);
+
+    & a,
+    label {
+      border-width: 2px;
+      border-style: solid;
+      padding: var(--spacing-50);
+      display: flex;
+    }
+
+    & a {
+      text-decoration: none;
+      border-color: var(--primary-600);
+    }
+
+    & label {
+      border-color: var(--primary-400);
+    }
+
+    & .actions {
+      display: contents;
+    }
+
+    & iconify-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+</style>

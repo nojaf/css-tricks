@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pages = import.meta.glob("/src/pages/**/*.astro");
+
+// Convert the file paths to relative URLs for linking
+const links = Object.keys(pages)
+  .map((page) => {
+    // Remove the '/src/pages' prefix and the '.astro' extension
+    const route = page
+      .replace("/src/pages", "")
+      .replace(".astro", "")
+      .replace("/index", "/");
+    return route === "" ? "/" : route;
+  })
+  .toSorted();
+
+console.log(links);
+---
+
+<Layout>
+  <div class="intro">
+    <h1>Dislay contents</h1>
+    <p>
+      Trick from <a
+        href="https://x.com/wesbos/status/1839698217459495017"
+        target="_blank">Wes Bos</a
+      >, make the nested elements of a flex-item behave as if they were direct
+      children of the flex container.
+    </p>
+  </div>
+  <main>
+    <ul>
+      {
+        links.map((link) => (
+          <li>
+            <a href={link}>{link}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>
