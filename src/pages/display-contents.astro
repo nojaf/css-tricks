@@ -48,6 +48,7 @@ import Layout from "../layouts/Layout.astro";
     gap: var(--spacing-200);
     border: 1px solid var(--dark-200);
     padding: var(--spacing-50) var(--spacing-100);
+    max-width: 800px;
 
     & a,
     label {
@@ -73,6 +74,10 @@ import Layout from "../layouts/Layout.astro";
     & iconify-icon {
       width: 24px;
       height: 24px;
+    }
+
+    & input {
+      flex-grow: 1;
     }
   }
 </style>
